@@ -1,3 +1,4 @@
+
 # %%
 import polars as pl
 import pyarrow as pa
@@ -52,5 +53,8 @@ dcsv_parsed.write_parquet("../data/chipotle_core_poi_and_patterns.parquet")
 # Now we can explore the relationships using unnest
 dcsv_parsed.select("placekey", "related_same_day_brand").unnest("related_same_day_brand").melt(id_vars="placekey").drop_nulls()
 dcsv_parsed.select("placekey", "visitor_home_cbgs").unnest("visitor_home_cbgs").melt(id_vars="placekey").drop_nulls()
+
+# %%
+dcsv_parsed.select()
 
 # %%
